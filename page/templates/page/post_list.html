@@ -1,10 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pol">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>My First Blog</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <meta name="description" content="Strona służąca w celach edukacyjnych - Technikum nr.1">
+    <meta name="keywords" content="technik informatyk, informatyka, e-14. e-12, e-13">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 </head>
 <body>
-<h1>Odpowiedz mi czy ta stronka działa?</h1>
+
+    <div id="container">
+        <div id="logo">
+            <h1>To jest mój pierwszy Blog</h1>
+        </div>
+        <div id="nav">
+            Spis treści
+        </div>
+        <div id="content">
+            {% for post in posts%}
+                <div>
+                    <p>published: {{post.published_date}}</p>
+                    <h1><a href="">{{post.title}}</a></h1>
+                    <p>{{post.text|linebreaksbr}}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <div id="ad">
+            Reklama
+        </div>
+        <div id="footer">
+            Stopka :)
+        </div>
+    </div>
+
 </body>
 </html>
